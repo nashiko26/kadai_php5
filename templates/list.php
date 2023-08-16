@@ -14,7 +14,7 @@
         <p>宣伝したい個展や出展情報を登録してみてください。</p>
     </div>
 
-    <form id="formlist" action="index.php" method="post">
+    <form id="formlist" action="model.php" method="post">
         <!-- insert.phpからmodel.phpに -->
         作家名: <input type="text" name="name" class="feedback-input">
         主な活動ジャンル:<select name="category" class="feedback-input">
