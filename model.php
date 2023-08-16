@@ -38,42 +38,37 @@ function get_all_posts($pdo, $id)
 {
     $stmt = $pdo->prepare('SELECT * FROM gs_kadai_an_table;');
     $status = $stmt->execute();    
-// function get_post_by_id($pdo, $id)
-// {
-//     $stmt = $pdo->prepare('SELECT * FROM gs_kadai_an_table WHERE id = :id;');
-//     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-//     $status = $stmt->execute();
-
-
-$view = '';
-if ($status === false) {
-    $error = $stmt->errorInfo();
-    exit('SQLError:' . print_r($error, true));
-} else {
-    while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        //GETデータ送信リンク作成
-        // <a>で囲う。
-        $view .= '<p>';
-        $view .= '<a href="detail.php?id=' . $result['id'] . '">';
-        $view .= $result['indate'] . '：' . $result['name'];
-        $view .= '</a>';
-        $view .= '<a href="delete.php?id=' . $result['id'] . '">';
-        $view .= ' [削除] ';
-        $view .= '</a>';
-        $view .= '</p>';
-    }
-    return $view;
 }
 
-    // $result = '';
-    // if ($status === false) {
-    //     $error = $stmt->errorInfo();
-    //     exit('SQLError:' . print_r($error, true));
-    // } else {
-    //     $result = $stmt->fetch();
-    //     return $result;
-    // }
-}
+// $view = '';
+// if ($status === false) {
+//     $error = $stmt->errorInfo();
+//     exit('SQLError:' . print_r($error, true));
+// } else {
+//     while ($result = $stmt->fetch(PDO::FETCH_ASSOC)) {
+//         //GETデータ送信リンク作成
+//         // <a>で囲う。
+//         $view .= '<p>';
+//         $view .= '<a href="detail.php?id=' . $result['id'] . '">';
+//         $view .= $result['indate'] . '：' . $result['name'];
+//         $view .= '</a>';
+//         $view .= '<a href="delete.php?id=' . $result['id'] . '">';
+//         $view .= ' [削除] ';
+//         $view .= '</a>';
+//         $view .= '</p>';
+//     }
+//     return $view;
+// }
+
+//     // $result = '';
+//     // if ($status === false) {
+//     //     $error = $stmt->errorInfo();
+//     //     exit('SQLError:' . print_r($error, true));
+//     // } else {
+//     //     $result = $stmt->fetch();
+//     //     return $result;
+//     // }
+// }
 
 // $stmt = $pdo->prepare(
 //     "INSERT INTO
@@ -94,7 +89,7 @@ if ($status === false) {
 // $stmt->bindValue(':description', $description, PDO::PARAM_STR);
 // $stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
 
-//実行
+// // 実行
 // $status = $stmt->execute();
 
 //データ登録処理後
